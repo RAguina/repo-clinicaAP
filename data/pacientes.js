@@ -7,12 +7,12 @@ const apiUrlPacientes = 'https://clinicaback-hngz.4.us-1.fl0.io/pacientes/'
 
 export async function obtenerPacientes() {
     try {
-      const respuesta = await axios.get('https://clinicaback-hngz.4.us-1.fl0.io/pacientes', { withCredentials: true })
+      const respuesta = await axios.get('https://clinicaback-hngz.4.us-1.fl0.io/pacientes/', { withCredentials: true })
       console.log('Deberia andar');
       return respuesta.data;
     } catch (error) {
       console.error("Error al obtener pacientes:", error);
-      throw error; // Puedes lanzar el error nuevamente para manejarlo en otro lugar si es necesario
+      throw error;
     }
   }
   
