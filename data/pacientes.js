@@ -7,7 +7,7 @@ const apiUrlPacientes = 'https://clinicaback-hngz.4.us-1.fl0.io/pacientes/'
 
 export async function obtenerPacientes() {
     try {
-      const respuesta = await axios.get('https://clinicaback-hngz.4.us-1.fl0.io/pacientes')
+      const respuesta = await axios.get('https://clinicaback-hngz.4.us-1.fl0.io/pacientes', { withCredentials: true })
       console.log('Deberia andar');
       return respuesta.data;
     } catch (error) {
@@ -24,13 +24,13 @@ export async function obtenerPacientes() {
 export async function obtenerPaciente(id) {
 
     console.log(id);
-    const respuesta = await axios.get(`${apiUrl}/pacientes/${id}`)
+    const respuesta = await axios.get(`${apiUrl}/pacientes/${id}`, { withCredentials: true })
     return respuesta.data
 }
 
 export async function agregarPaciente(datos) {
     try {
-        const respuesta = await axios.post(`${apiUrl}/pacientes/`, datos)
+        const respuesta = await axios.post(`${apiUrl}/pacientes/`, { withCredentials: true }, datos)
         
         return respuesta.data
     } catch (error) {
@@ -42,7 +42,7 @@ export async function agregarPaciente(datos) {
 
 export async function actualizarPaciente(id, datos) {
     try {
-        const respuesta = await axios.put(`${apiUrl}/pacientes/${id}`, datos)
+        const respuesta = await axios.put(`${apiUrl}/pacientes/${id}`, { withCredentials: true }, datos)
         return respuesta.data
     } catch (error) {
         console.log(error)
@@ -51,7 +51,7 @@ export async function actualizarPaciente(id, datos) {
 
 export async function eliminarPaciente(id) {
     try {
-        const respuesta = await axios.delete(`${apiUrl}/pacientes/${id}`);
+        const respuesta = await axios.delete(`${apiUrl}/pacientes/${id}`, { withCredentials: true });
         return respuesta.data;
     } catch (error) {
         console.error('Error al eliminar el médico:', error);
