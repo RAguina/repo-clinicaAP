@@ -15,11 +15,6 @@ export async function obtenerPacientes() {
       throw error;
     }
   }
-  
-/*export async function obtenerPacientes() {
-    const respuesta = await axios.get(`${apiUrl}/pacientes/`)
-    return respuesta.data
-} */  
 
 export async function obtenerPaciente(id) {
 
