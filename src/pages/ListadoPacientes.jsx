@@ -32,6 +32,7 @@ function ListadoPacientes() {
     //axios.get('https://clinicaback-hngz.4.us-1.fl0.io')
       obtenerPacientes()
       .then(response => {
+        console.log('Respuesta de la API:', response);
         setPacientes(response.data);
       })
       .catch(error => {
