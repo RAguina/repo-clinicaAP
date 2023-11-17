@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export async function obtenerTurnos() {
     try{
-    const respuesta = await axios.get(`${apiUrl}/turnos/`,{withCredentials:true})
+    const respuesta = await axios.get(`${apiUrl}/turnos/`)
     return respuesta.data
     } catch (error) {
         console.error('Error en obtenerTurnos:', error);
@@ -14,7 +14,7 @@ export async function obtenerTurnos() {
 
 export async function obtenerTurno(id) {
     try{
-    const respuesta = await axios.get(`${apiUrl}/turnos/${id}`,{withCredentials:true})
+    const respuesta = await axios.get(`${apiUrl}/turnos/${id}`)
     return respuesta.data
     } catch (error) {
         console.error('Error en obtenerTurno:', error);
@@ -24,7 +24,7 @@ export async function obtenerTurno(id) {
 
 export async function agregarTurno(datos) {
     try {
-        const respuesta = await axios.post(`${apiUrl}/turnos/`, datos, {withCredentials:true})
+        const respuesta = await axios.post(`${apiUrl}/turnos/`, datos)
         return respuesta.data
     } catch (error) {
         console.error('Error en agregarTurno:', error);
@@ -34,7 +34,7 @@ export async function agregarTurno(datos) {
 
 export async function actualizarTurno(id, datos) {
     try {
-        const respuesta = await axios.put(`${apiUrl}/turnos/${id}`, datos, {withCredentials:true});
+        const respuesta = await axios.put(`${apiUrl}/turnos/${id}`, datos);
         return respuesta.data
     } catch (error) {
         console.error('Error en actualizarTurno:', error);
@@ -44,7 +44,7 @@ export async function actualizarTurno(id, datos) {
 
 export async function actualizarEstadoTurno(id, estado) {
     try {
-        const respuesta = await axios.put(`${apiUrl}/turnos/${id}`, { estado }, {withCredentials:true})
+        const respuesta = await axios.put(`${apiUrl}/turnos/${id}`, { estado })
         return respuesta.data
     } catch (error) {
         console.error('Error en actualizarEstadoTurno:', error);
@@ -54,7 +54,7 @@ export async function actualizarEstadoTurno(id, estado) {
 
 export async function eliminarTurno(id) {
     try {
-        const respuesta = await axios.delete(`${apiUrl}/turnos/${id}`, {withCredentials:true})
+        const respuesta = await axios.delete(`${apiUrl}/turnos/${id}`)
         return respuesta.data
     } catch (error) {
         console.error('Error en eliminarTurno:', error);
