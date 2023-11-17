@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { eliminarPaciente } from '../../data/pacientes';
+import { eliminarPaciente, obtenerPacientes } from '../../data/pacientes';
 
 import EditarPacienteModal from './EditarPacienteModal'
 import axios from 'axios';
@@ -29,7 +29,8 @@ function ListadoPacientes() {
 
   //Traer
   const fetchPacientes = () => {
-    axios.get('https://clinicaback-hngz.4.us-1.fl0.io')
+    //axios.get('https://clinicaback-hngz.4.us-1.fl0.io')
+      obtenerPacientes()
       .then(response => {
         setPacientes(response.data);
       })
@@ -77,11 +78,12 @@ function ListadoPacientes() {
       </thead>
       <tbody>
       
-      {Array.isArray(pacientesAMostrar) && pacientesAMostrar.sort((a, b) => (a.id || 0) - (b.id || 0)).map((paciente) => (
-
+      
+      
+        {pacientesAMostrar.sort((a, b) => a.id - b.id).map((paciente) => (
       //{pacientesAMostrar.filter(paciente => paciente.id).sort((a, b) => a.id - b.id).map((paciente) => (
+      //{Array.isArray(pacientesAMostrar) && pacientesAMostrar.sort((a, b) => (a.id || 0) - (b.id || 0)).map((paciente) => (
 
-      //  {pacientesAMostrar.sort((a, b) => a.id - b.id).map((paciente) => (
           <tr className='odd:bg-gray-200' key={paciente.id}>
             <td className="border px-4 py-2">{paciente.id}</td>
             <td className="border px-4 py-2">{paciente.nombre}</td>
