@@ -28,6 +28,7 @@ function ListadoPacientes() {
   }
 
   //Traer
+  /* Obsoleta (Se reemplazo por obtenerPacientes porque era redundante, aunque se sigue pasando como prop)
   const fetchPacientes = () => {
     //axios.get('https://clinicaback-hngz.4.us-1.fl0.io')
       obtenerPacientes()
@@ -39,9 +40,9 @@ function ListadoPacientes() {
         console.error('Error:', error);
       });
   };
-
+*/
   useEffect(() => {
-    fetchPacientes();
+    obtenerPacientes();
   }, []);
 
   const handleSubmit = async (idPaciente) => {
@@ -133,7 +134,7 @@ function ListadoPacientes() {
       setPacienteAEditar(null);
       setIsModalOpen(false);
     }}
-    fetchPacientes={fetchPacientes}
+    obtenerPacientes={obtenerPacientes}
   />)}
   </div>
   );
