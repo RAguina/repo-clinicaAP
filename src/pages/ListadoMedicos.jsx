@@ -3,8 +3,6 @@ import { eliminarMedico } from '../../data/medicos';
 import EditarMedicoModal from './EditarMedicoModal';
 import axios from 'axios';
 
-axios.defaults.withCredentials = true;
-
 function ListadoMedicos() {
   const [medicos, setMedicos] = useState([]);
   const [medicoAEditar, setMedicoAEditar] = useState(null);
