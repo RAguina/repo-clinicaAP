@@ -36,7 +36,7 @@ export async function actualizarMedico(id, datos) {
 
 export async function eliminarMedico(id) {
     try {
-        const respuesta = await axios.delete(`${apiUrl}/medicos/{id}`);
+        const respuesta = await axios.delete(`${apiUrl}/medicos/${id}`);
         return respuesta.data;
     } catch (error) {
         console.error('Error al eliminar el médico:', error);

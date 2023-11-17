@@ -25,7 +25,7 @@ export async function obtenerPaciente(id) {
 
 export async function agregarPaciente(datos) {
     try {
-        const respuesta = await axios.post(`${apiUrl}/pacientes/`)
+        const respuesta = await axios.post(`${apiUrl}/pacientes/`, datos)
         
         return respuesta.data
     } catch (error) {
@@ -37,7 +37,7 @@ export async function agregarPaciente(datos) {
 
 export async function actualizarPaciente(id, datos) {
     try {
-        const respuesta = await axios.put(`${apiUrl}/pacientes/${id}`)
+        const respuesta = await axios.put(`${apiUrl}/pacientes/${id}`, datos)
         return respuesta.data
     } catch (error) {
         console.log(error)
