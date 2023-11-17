@@ -25,7 +25,7 @@ function ListadoMedicos() {
   
   //Traer
   const fetchMedicos = () => {
-    axios.get('https://-hngz.4.us-1.fl0.io:8080/medicos')
+    axios.get('https://clinicaback-hngz.4.us-1.fl0.io/medicos')
       .then(response => {
         setMedicos(response.data);
       })
