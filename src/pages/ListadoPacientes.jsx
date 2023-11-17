@@ -76,7 +76,9 @@ function ListadoPacientes() {
         </tr>
       </thead>
       <tbody>
-        {pacientesAMostrar.sort((a, b) => a.id - b.id).map((paciente) => (
+      {pacientesAMostrar.filter(paciente => paciente.id).sort((a, b) => a.id - b.id).map((paciente) => (
+
+      //  {pacientesAMostrar.sort((a, b) => a.id - b.id).map((paciente) => (
           <tr className='odd:bg-gray-200' key={paciente.id}>
             <td className="border px-4 py-2">{paciente.id}</td>
             <td className="border px-4 py-2">{paciente.nombre}</td>
