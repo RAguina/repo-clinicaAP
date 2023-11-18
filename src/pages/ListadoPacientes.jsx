@@ -82,8 +82,8 @@ function ListadoPacientes() {
       
       
       
-        {pacientesAMostrar.sort((a, b) => a.id - b.id).map((paciente) => (
-      //{pacientesAMostrar.filter(paciente => paciente.id).sort((a, b) => a.id - b.id).map((paciente) => (
+        {pacientesAMostrar.filter(paciente => paciente.id).sort((a, b) => a.id - b.id).map((paciente) => (
+      //{pacientesAMostrar.sort((a, b) => a.id - b.id).map((paciente) => (
       //{Array.isArray(pacientesAMostrar) && pacientesAMostrar.sort((a, b) => (a.id || 0) - (b.id || 0)).map((paciente) => (
 
           <tr className='odd:bg-gray-200' key={paciente.id}>
