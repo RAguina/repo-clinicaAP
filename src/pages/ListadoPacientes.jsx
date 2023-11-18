@@ -9,23 +9,32 @@ function ListadoPacientes() {
   const [pacienteAEditar, setPacienteAEditar] = useState(null);
   const [busqueda, setBusqueda] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pacientesAMostrar, setPacientesAMostrar] = useState([]);
 
   //Buscar (Sacrificando rendimiento, ganando dinamismo y elegancia)
   const handleSearch = (e) => {
     setBusqueda(e.target.value);
   };
 
-
-  //Muestre la busqueda
-  let pacientesAMostrar = pacientes;
-
+  useEffect(() => {
+    if (busqueda) {
+      let pacientesFiltrados = pacientes.filter((paciente) => {
+        const nombreCompleto = `${paciente.nombre} ${paciente.apellido}`.toLowerCase();
+        return nombreCompleto.includes(busqueda.toLowerCase());
+      });
+      setPacientesAMostrar(pacientesFiltrados);
+    } else {
+      setPacientesAMostrar(pacientes);
+    }
+  }, [busqueda]);
+  /*
   if (busqueda) {
     pacientesAMostrar = pacientes.filter((paciente) => {
       const nombreCompleto = `${paciente.nombre} ${paciente.apellido}`.toLowerCase();
       return nombreCompleto.includes(busqueda.toLowerCase());
     });
   }
-
+*/
   //Traer
   // Obsoleta (Se reemplazo por obtenerPacientes porque era redundante, aunque se sigue pasando como prop)
   //Traer
