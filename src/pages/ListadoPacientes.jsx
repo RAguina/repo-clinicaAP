@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { eliminarPaciente, obtenerPacientes } from '../data/pacientes';
-
 import EditarPacienteModal from './EditarPacienteModal'
 import axios from 'axios';
 
@@ -28,21 +27,20 @@ function ListadoPacientes() {
   }
 
   //Traer
-  /* Obsoleta (Se reemplazo por obtenerPacientes porque era redundante, aunque se sigue pasando como prop)
-  const fetchPacientes = () => {
-    //axios.get('https://clinicaback-hngz.4.us-1.fl0.io')
-      obtenerPacientes()
-      .then(response => {
-        console.log('Respuesta de la API:', response);
-        setPacientes(response.data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+  // Obsoleta (Se reemplazo por obtenerPacientes porque era redundante, aunque se sigue pasando como prop)
+  //Traer
+  const fetchPacientes = async () => {
+    try { 
+      const pacientesData = await obtenerPacientes();
+      setPacientes(pacientesData);
+      setPacientesAMostrar(pacientesData);
+    } catch (error) {
+      console.error('Error al obtener turnos:', error);
+    }
   };
-*/
+
   useEffect(() => {
-    obtenerPacientes();
+    fetchPacientes();
   }, []);
 
   const handleSubmit = async (idPaciente) => {
@@ -134,7 +132,7 @@ function ListadoPacientes() {
       setPacienteAEditar(null);
       setIsModalOpen(false);
     }}
-    obtenerPacientes={obtenerPacientes}
+    fetchPacientes={fetchPacientes}
   />)}
   </div>
   );
