@@ -3,17 +3,8 @@ import Modal from 'react-modal';
 import axios from 'axios';
 import { actualizarTurno } from '../data/turnos';
 
-//import { actualizarTurno } from '../../../clinicaBack/data/turnos';
 
- /* Función para formatear la fecha
-function formatearFecha(fecha) {
-  const fechaObj = new Date(fecha);
-  const dia = String(fechaObj.getDate()).padStart(2, '0');
-  const mes = String(fechaObj.getMonth() + 1).padStart(2, '0');
-  const ano = fechaObj.getFullYear();
-  return `${ano}-${mes}-${dia}`;
-}
-*/
+
 
 function EditarTurnoModal({ isOpen, setIsOpen, turno, onClose, fetchTurnos }) {
   const [formData, setFormData] = useState(turno);
