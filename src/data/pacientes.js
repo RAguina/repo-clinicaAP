@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const apiUrl = 'https://clinicaback-hngz.4.us-1.fl0.io/pacientes/';
+const apiUrl = 'https://clinicaback-hngz.4.us-1.fl0.io';
 const apiUrlPacientesId = 'https://clinicaback-hngz.4.us-1.fl0.io/pacientes/:id'
 
 
 
 export async function obtenerPacientes() {
     try {
-      const respuesta = await axios.get('https://clinicaback-hngz.4.us-1.fl0.io/pacientes/')
+      const respuesta = await axios.get(`${apiUrl}/pacientes`)
       return respuesta.data;
     } catch (error) {
       console.error("Error al obtener pacientes:", error);
@@ -18,13 +18,13 @@ export async function obtenerPacientes() {
 export async function obtenerPaciente(id) {
 
     console.log(id);
-    const respuesta = await axios.get(apiUrlPacientesId)
+    const respuesta = await axios.get(`${apiUrl}/pacientes/${id}`)
     return respuesta.data
 }
 
 export async function agregarPaciente(datos) {
     try {
-        const respuesta = await axios.post(apiUrl, datos)
+        const respuesta = await axios.post(`${apiUrl}/pacientes/`, datos)
         
         return respuesta.data
     } catch (error) {
@@ -36,7 +36,7 @@ export async function agregarPaciente(datos) {
 
 export async function actualizarPaciente(id, datos) {
     try {
-        const respuesta = await axios.put(apiUrlPacientesId, datos)
+        const respuesta = await axios.put(`${apiUrl}/pacientes/${id}`, datos)
         return respuesta.data
     } catch (error) {
         console.log(error)
@@ -45,7 +45,7 @@ export async function actualizarPaciente(id, datos) {
 
 export async function eliminarPaciente(id) {
     try {
-        const respuesta = await axios.delete(apiUrlPacientesId);
+        const respuesta = await axios.delete(`${apiUrl}/pacientes/${id}`);
         return respuesta.data;
     } catch (error) {
         console.error('Error al eliminar el médico:', error);
