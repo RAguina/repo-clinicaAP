@@ -16,8 +16,9 @@ export async function obtenerMedico(id) {
 
 export async function agregarMedico(datos) {
     try {
+        console.log(datos);
         const respuesta = await axios.post(`${apiUrl}/medicos/`, datos)
-        
+        console.log(datos);
         return respuesta.data
     } catch (error) {
         console.error('Error en agregarMedico:', error);
