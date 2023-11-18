@@ -1,6 +1,6 @@
   import React, { useState } from 'react';
   import Modal from 'react-modal';
-  import axios from 'axios';
+  import { actualizarPaciente } from '../data/pacientes';
 
   function EditarPacienteModal({ isOpen, setIsOpen, paciente, onClose, fetchPacientes }) {
     const [formData, setFormData] = useState(paciente);
@@ -15,7 +15,7 @@
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.put(`../data/pacientes/${paciente.id}`, formData);
+        const response = await actualizarPaciente(paciente.id,formData)
         console.log('Paciente actualizado exitosamente:', response.data);
         onClose();
         fetchPacientes();
