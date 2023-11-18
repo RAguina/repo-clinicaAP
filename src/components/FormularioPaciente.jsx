@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { agregarPaciente } from '../data/pacientes';
-
 import ErrorPage from './ErrorPage';
 
 const FormularioPacientes = () => {
