@@ -15,7 +15,7 @@
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.put(`../../data/pacientes/${paciente.id}`, formData);
+        const response = await axios.put(`../data/pacientes/${paciente.id}`, formData);
         console.log('Paciente actualizado exitosamente:', response.data);
         onClose();
         fetchPacientes();

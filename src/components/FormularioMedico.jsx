@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { agregarMedico } from '../../data/medicos';
+import { agregarMedico } from '../data/medicos';
 import ErrorPage from './ErrorPage';
 
 

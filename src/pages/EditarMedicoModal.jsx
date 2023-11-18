@@ -15,7 +15,7 @@ function EditarMedicoModal({ isOpen, setIsOpen, medico, onClose, fetchMedicos })
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`../../data/medicos/${medico.id}`, formData);
+      const response = await axios.put(`../data/medicos/${medico.id}`, formData);
       console.log('Medico actualizado exitosamente:', response.data);
       onClose();
       fetchMedicos();

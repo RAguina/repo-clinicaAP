@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { agregarTurno } from '../../data/turnos';
-import { obtenerMedicos } from '../../data/medicos';
+import { agregarTurno } from '../data/turnos';
+import { obtenerMedicos } from '../data/medicos';
 import ErrorPage from './ErrorPage';
 
 const FormularioTurnos = () => {

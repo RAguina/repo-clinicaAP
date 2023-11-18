@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import axios from 'axios';
-import { actualizarTurno } from '../../data/turnos';
+import { actualizarTurno } from '../data/turnos';
 
 //import { actualizarTurno } from '../../../clinicaBack/data/turnos';
 

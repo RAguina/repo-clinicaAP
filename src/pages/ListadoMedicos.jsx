@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { eliminarMedico } from '../../data/medicos';
+import { eliminarMedico } from '../data/medicos';
 import EditarMedicoModal from './EditarMedicoModal';
 import axios from 'axios';
 

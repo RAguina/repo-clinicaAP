@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { eliminarTurno, obtenerTurnos } from '../../data/turnos'
+import { eliminarTurno, obtenerTurnos } from '../data/turnos'
 import EditarTurnoModal from './EditarTurnoModal'
 import axios from 'axios';
 
