@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import axios from 'axios';
 import { actualizarMedico } from '../data/medicos';
 
 function EditarMedicoModal({ isOpen, setIsOpen, medico, onClose, fetchMedicos }) {

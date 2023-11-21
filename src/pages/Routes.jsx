@@ -12,10 +12,6 @@ import NuevoPaciente from './NuevoPaciente';
 import NuevoMedico from './NuevoMedico'
 import NuevoTurno from './NuevoTurno';
 
-
-//          <Route path="Editar" element={<EditarPacienteModal />} />       
-//          <Route path="Eliminar" element={<EliminarPaciente />} />
-
 const RoutesComponent = () => (
 	<Routes>
         <Route path="/news" element={<News />} />
