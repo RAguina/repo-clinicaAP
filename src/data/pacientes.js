@@ -36,10 +36,19 @@ export async function actualizarPaciente(id, datos) {
 
 export async function eliminarPaciente(id) {
     try {
+        // 1. Desactiva temporalmente la restricción de clave externa
+        await axios.post(`${apiUrl}/desactivar-restriccion-externa`);
+
+        // 2. Elimina el paciente
         const respuesta = await axios.delete(`${apiUrl}/pacientes/${id}`);
+
+        // 3. Reactiva la restricción de clave externa
+        await axios.post(`${apiUrl}/activar-restriccion-externa`);
+
         return respuesta.data;
     } catch (error) {
-        console.error('Error al eliminar el médico:', error);
+        console.error('Error al eliminar el paciente:', error);
     }
 }
+
 
