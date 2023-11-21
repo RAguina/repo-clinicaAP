@@ -48,6 +48,7 @@ export async function eliminarPaciente(id) {
         return respuesta.data;
     } catch (error) {
         console.error('Error al eliminar el paciente:', error);
+        throw new Error('Error al eliminar el paciente');
     }
 }
 
